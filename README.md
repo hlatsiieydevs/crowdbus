@@ -32,3 +32,23 @@ packages/
   shared/       # Shared utilities and types
 services/       # Backend microservices
 ```
+
+## Branching Strategy
+
+This project follows a Git Flow branching model:
+
+| Branch | Purpose |
+|--------|---------|
+| `prod` | Production-ready code. Only receives merges from `release` or `hotfix`. |
+| `develop` | Main development branch. All features are integrated here. |
+| `feature/*` | New features. Branch from `develop`, merge back to `develop`. |
+| `hotfix/*` | Urgent production fixes. Branch from `prod`, merge to both `prod` and `develop`. |
+| `release/*` | Release preparation. Branch from `develop`, merge to `prod` and `develop`. |
+
+### Workflow
+
+```
+feature/* ──┐
+            ├──► develop ──► release/* ──► prod
+hotfix/* ───────────────────────────────────┘
+```
