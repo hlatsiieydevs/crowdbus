@@ -1,0 +1,13 @@
+{
+  "name": "crowdbus",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/mobile",
+    "services/*",
+    "packages/shared"
+  ],
+  "scripts": {
+    "mobile": "npm run start --workspace=apps/mobile"
+  }
+}
